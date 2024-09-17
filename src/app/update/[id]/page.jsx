@@ -7,7 +7,7 @@ const Update = ({params}) => {
     const { data } = useSession();
     const [info, setInfo] = useState([]);
     const loadData = async() =>{
-        const res = await fetch(`https://car-doctor-pro-three.vercel.app/my-bookings/api/booking/${params.id}`)
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/my-bookings/api/booking/${params.id}`)
         const resp = await res.json();
         console.log('response', resp);
         
@@ -18,7 +18,7 @@ const Update = ({params}) => {
         const update = {
             message: e.target.message.value
         };
-        const res = await fetch(`https://car-doctor-pro-three.vercel.app/my-bookings/api/booking/${params.id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/my-bookings/api/booking/${params.id}`, {
             method: "PATCH",
             body: JSON.stringify(update),
             headers: {

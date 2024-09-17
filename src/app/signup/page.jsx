@@ -13,7 +13,7 @@ const Signup = () => {
             email: document.getElementById('email').value,
             password: document.getElementById('password').value,
         }
-        const res = await fetch('https://car-doctor-pro-three.vercel.app/signup/api', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/signup/api`, {
             method: 'POST',
             body: JSON.stringify(newUser),
             headers: {

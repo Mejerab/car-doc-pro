@@ -21,7 +21,7 @@ const Checkout = ({ params }) => {
             message: e.target.message.value,
             service: [service]
         }
-        const res = await fetch('https://car-doctor-pro-three.vercel.app/check/api/new-booking', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/check/api/new-booking`, {
             method: 'POST',
             body: JSON.stringify(newBooking),
             headers: {
