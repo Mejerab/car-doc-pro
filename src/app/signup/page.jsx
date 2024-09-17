@@ -1,14 +1,12 @@
 'use client'
 
 import Image from "next/image";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import SocialLogin from "@/components/SocialLogin";
+import { Suspense } from "react";
 
-const page = () => {
-    const handleSubmit = async(e) =>{
+const Signup = () => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const newUser = {
             name: document.getElementById('name').value,
@@ -53,5 +51,9 @@ const page = () => {
         </div>
     );
 };
-
+const page = () => {
+    <Suspense>
+        <Signup />
+    </Suspense>
+}
 export default page;
